@@ -1,0 +1,51 @@
+#looding_box{
+    position: fixed;
+    cursor: pointer;
+	width:220px;
+    -webkit-box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
+    -o-box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+	z-index:9000;
+}
+
+#looding_content{
+
+}
+
+#looding_mask{
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:8000;
+  background-color:#444;
+  display:none;
+}
+
+/*
+Loading Nyan
+Nyankod.com Package
+*/
+
+.loading-nyan-bottom {
+	background:#52e2ce;
+	height:40px;
+	line-height:40px;
+	font-size:16px;
+	width:100%;
+	position:fixed;
+	z-index:99999999;
+	left:0px;
+	bottom:0px;
+	text-align:center;
+	color:#ffffff;
+	left:-100%;
+	opacity: 0;
+	-webkit-transition: opacity 0.2s ease-in-out;
+	-moz-transition: opacity 0.2s ease-in-out;
+	-o-transition: opacity 0.2s ease-in-out;
+	transition: opacity 0.2s ease-in-out;
+	font-family:arial;
+}
+.loading-text-img { display:none; }

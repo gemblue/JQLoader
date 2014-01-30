@@ -11,6 +11,9 @@ var window_height = $( window ).height();
 var mid =  window_width / 2;
 var lood_width = 220;
 
+/*
+Standart loading
+*/
 function standard_lood(config) 
 {	
 	/*
@@ -78,6 +81,9 @@ function standard_lood(config)
 	$('#looding_box').show();
 }
 
+/*
+Nyankod.com style loading
+*/
 function nyan_lood(config)
 {
 	if (config.type == 'close')
@@ -104,10 +110,21 @@ function nyan_lood(config)
 		return true;
 	}
 	
+	/*
+	Embed div
+	*/
 	lood_div = "<div class='loading-nyan-bottom'><div class='loading-text-img'>Loading <img src='img/loading_bottom.gif'/></div></div>";
 	$('body').append(lood_div);
 	
+	/*
+	Set style
+	*/
+	$(".loading-nyan-bottom").css("background", config.color);
 	$(".loading-nyan-bottom").css("opacity","1");
+	
+	/*
+	Start loading
+	*/
 	$(".loading-nyan-bottom").animate(
 		{ left: 0 }, {
 			duration: 1000,
@@ -117,6 +134,8 @@ function nyan_lood(config)
 			}
 		}
 	);	
+	
+	return false;
 }
 	
 $('#looding_box').live('click', function() {

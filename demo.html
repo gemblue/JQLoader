@@ -1,17 +1,12 @@
 <!-- This is just this page style -->
 <style>
-.btn-demo{
+.script{
 background:#dedede;
 padding:10px;
 color:#444;
 margin-top:10px;
 width:200px;
 }
-
-.btn-demo:hover{
-cursor:pointer;
-}
-
 </style>
 
 <!-- Looding need this -->
@@ -22,11 +17,20 @@ cursor:pointer;
 <script src="js/looding.js" type="text/javascript"></script>
 <link href="css/looding.css" type="text/css" rel="stylesheet">
     
-<h1>Loading Style Collection in One Function</h1>
-<h3>Let us handle your loading style.</h3>
+<h1>Jquery loading plugin</h1>
+<h3>Suitable to accompany ajax call</h3>
 
-Wanna try? <br/><br/>
-<div class="btn-demo" id="trigger">
+Try our the Sample : <br/><br/>
+
+
+<h3>Standart Loading :</h3>
+
+<button id="demo1">Open</button><button id="demo1_close">Close</button><br/>
+<br/>
+Script :<br/>
+
+<div class="script">
+Open :<br/>
 standard_lood({<br/>
 	type: 'type-2',<br/>
 	with_mask: true,<br/>
@@ -34,17 +38,38 @@ standard_lood({<br/>
 });
 </div>
 
+<br/>
 
-<div class="btn-demo" id="trigger_nyan">
+<div>
+<h3>Nyankod.com Loading :</h3>
+
+<button id="demo2">Open</button><button id="demo2_close">Close</button><br/>
+<br/>
+Script :<br/>
+<div class="script">
+Open :<br/>
 nyan_lood({<br/>
 	type: 'open',<br/>
 	color: '#52e2ce'<br/>
 });
-</button>
+</div>
+
+<div class="script">
+Close :<br/>
+nyan_lood({<br/>
+	type: 'close',<br/>
+	color: '#52e2ce'<br/>
+});
+</div>
+
+
+</div>
+
+</div>
   
 <script>
 
-$('#trigger').click(function(){
+$('#demo1').click(function(){
 	
 	standard_lood({
 		type: 'type-2',
@@ -54,18 +79,25 @@ $('#trigger').click(function(){
 
 });
 
-$('#trigger_nyan').click(function(){
+$('#demo2').click(function(){
 
 	nyan_lood({
 		type: 'open',
 		color: '#52e2ce'
 	});
 	
+})
+
+$('#demo2_close').click(function(){
+
 	nyan_lood({
 		type: 'close',
 		color: '#52e2ce'
 	});
 
 })
+
+
+
 
 </script>

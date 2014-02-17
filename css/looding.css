@@ -1,28 +1,3 @@
-#looding_box{
-    position: fixed;
-    cursor: pointer;
-	width:220px;
-    -webkit-box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
-    -o-box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
-    overflow: hidden;
-	z-index:9000;
-}
-
-#looding_content{
-
-}
-
-#looding_mask{
-  position:absolute;
-  left:0;
-  top:0;
-  z-index:8000;
-  background-color:#444;
-  display:none;
-}
-
 /*
 Loading Nyan
 Nyankod.com Package

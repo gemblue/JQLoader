@@ -1,4 +1,4 @@
-<!-- Only for beuatify this demo page -->
+<!-- Only for beautify this demo page -->
 <style>
 body{
 font-family:calibri;
@@ -34,12 +34,12 @@ Try our the Sample : <br/><br/>
 <button id="open_nyankod">Open Nyankod</button>
 <button id="close_nyankod">Close Nyankod</button>
 
-<h2>Loading on The Div</h2>
+<h2>Loading on the div</h2>
 
 <button id="open_div_standard">Open div Standard</button>
-<button id="open_div_standard">Close div Standard</button>
+<button id="close_div_standard">Close div Standard</button>
 <br/><br/>
-<div class="div_sample"></div>
+<div style="position:relative;" class="div_sample"></div>
 
 
 <script>
@@ -51,7 +51,9 @@ $(document).ready(function(){
 	
 		$( "body" ).looding({
 			theme: "standard",
-			mask: false
+			mask: true,
+			background: "#444",
+			color: "#fff"
 		});
 		
 	});
@@ -59,8 +61,30 @@ $(document).ready(function(){
 	$('#close_standard').click(function(){
 	
 		$( "body" ).looding({
+			action: "close"
+		});
+		
+	});
+	
+	// Div standard
+	$('#open_div_standard').click(function(){
+	
+		$( ".div_sample" ).looding({
 			theme: "standard",
-			mask: false,
+			mask: true,
+			background: "#fff",
+			color: "#fff"
+		});
+		
+	});
+	
+	$('#close_div_standard').click(function(){
+	
+		$( ".div_sample" ).looding({
+			theme: "standard",
+			mask: true,
+			background: "#fff",
+			color: "#fff",
 			action: "close"
 		});
 		

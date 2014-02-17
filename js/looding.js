@@ -7,54 +7,63 @@
 
 (function ( $ ) {
  
-	var lood_div;
-	var window_width = $( window ).width();
-	var window_height = $( window ).height();
-	var mid =  window_width / 2;
-	var lood_width = 220;
-	
     $.fn.looding = function( options ) {
 	
         var settings = $.extend({
             theme: "standard",
 			mask: true,
+			background: "#444",
+			color: "#fff",
 			action: "open"
         }, options);
-	
+			
 		if (settings.theme == 'standard')
 		{
 			// Action
 			if (settings.action == 'close')
 			{
-				$('#looding_box').hide();
-				$('#looding_mask').hide();
+				$('.looding_box').hide();
+				$('.looding_mask').hide();
 				return false;
 			}
 			
 			// Mask option
 			if (settings.mask == true)
 			{
-				// Set element
-				lood_mask = "<div id='looding_mask'></div>";
-				
-				// Append mask element
-				$('body').append(lood_mask);
-				
-				// Call mask
-				$('#looding_mask').css({'width':window_width,'height':window_height});
-				$('#looding_mask').fadeIn(500);
+				var overlay = $('<div class="looding_mask"></div>').css({
+				'background-color': "#444",
+				'opacity': 0.7,
+				'width':this.width(),
+				'height':this.height(),
+				'position':'absolute',
+				'top':'0px',
+				'left':'0px',
+				'overflow': "hidden",
+				'z-index':88888
+				});
+			
+				// Append and call mask element
+				this.append(overlay);
+				$('.looding_mask').fadeIn(500);
 			}
 			
 			// Set lood element
-			lood_div = "<div id='looding_box'><div id='looding_content'><img src='img/type-2.gif' /></div></div>";
-			$('body').append(lood_div);
+			this.append("<div class='looding_box'>Please wait..</div>");
 			
-			// Position
-			$('#looding_box').css("top", (window_height / 2));
-			$('#looding_box').css('left', mid - (lood_width / 2));
-					
+			// Style set
+			$('.looding_box').css({
+				'position':'absolute',
+				'top':this.height() / 2,
+				'left': (this.width() / 2) - ( 100 / 2),
+				'cursor': "pointer",
+				'overflow': "hidden",
+				'z-index':99999,
+				'width':100,
+				'color': "#fff"
+			});
+			
 			// Show lood
-			$('#looding_box').show();
+			$('.looding_box').show();
 		}
 		else if (settings.theme == 'nyankod')
 		{

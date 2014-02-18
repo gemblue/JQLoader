@@ -8,7 +8,7 @@
 (function ( $ ) {
  
     $.fn.looding = function( options ) {
-	
+		
         var settings = $.extend({
             theme: "standard",
 			mask: true,
@@ -16,7 +16,10 @@
 			color: "#fff",
 			action: "open"
         }, options);
-			
+		
+		// Reset all looding class, prevent double dom
+		$('.looding').remove();
+		
 		if (settings.theme == 'standard')
 		{
 			// Action
@@ -30,7 +33,7 @@
 			// Mask option
 			if (settings.mask == true)
 			{
-				var overlay = $('<div class="looding_mask"></div>').css({
+				var overlay = $('<div class="looding_mask looding"></div>').css({
 				'background-color': "#444",
 				'opacity': 0.7,
 				'width':this.width(),
@@ -48,7 +51,7 @@
 			}
 			
 			// Set lood element
-			this.append("<div class='looding_box'>Please wait..</div>");
+			this.append("<div class='looding_box looding'>Please wait..</div>");
 			
 			// Style set
 			$('.looding_box').css({
@@ -93,7 +96,7 @@
 			else
 			{
 				// Set element
-				lood_div = "<div class='loading-nyan-bottom'><div class='loading-text-img'>Please wait..</div></div>";
+				lood_div = "<div class='loading-nyan-bottom looding'><div class='loading-text-img looding'>Please wait..</div></div>";
 				$('body').append(lood_div);
 				
 				// Set style

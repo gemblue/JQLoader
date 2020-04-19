@@ -1,0 +1,30 @@
+/**
+ * JQLoader
+ * 
+ * JQLoader is a Jquery plugin to show a loading bar, or full screen loading
+ * 
+ * @package Core
+ * @author Gemblue
+ */
+
+.loading-bottom {
+	background:#52e2ce;
+	height:40px;
+	line-height:40px;
+	font-size:16px;
+	width:100%;
+	position:fixed;
+	z-index:99999999;
+	left:0px;
+	bottom:0px;
+	text-align:center;
+	color:#ffffff;
+	left:-100%;
+	opacity: 0;
+	-webkit-transition: opacity 0.2s ease-in-out;
+	-moz-transition: opacity 0.2s ease-in-out;
+	-o-transition: opacity 0.2s ease-in-out;
+	transition: opacity 0.2s ease-in-out;
+	font-family:arial;
+}
+.loading-text-img { display:none; }
